@@ -18,9 +18,12 @@ CS 4393 2024 Group Project
    cd backend
 
 2. Install dependencies:
-    In the terminal use command: pip install fastapi uvicorn
+    In the terminal use command:
+   ```bash
+   pip install fastapi uvicorn
 
 3. Run the backend server:
+    ```bash
     uvicorn main:app --reload
 
 4. Verify the backend is running at:
@@ -28,10 +31,12 @@ CS 4393 2024 Group Project
 
 ### Steps to Run the Frontend
 1. Navigate to the frontend directory
+    ```bash
     cd frontend
 
 2. Start a local server:
+    ```bash
     python -m http.server 8080
 
-3. Open the frontend in your browser:
+2. Open the frontend in your browser:
     http://127.0.0.1:8080
