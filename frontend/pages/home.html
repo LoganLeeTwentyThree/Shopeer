@@ -1,2 +1,476 @@
-<h2>Welcome to Shopeer</h2>
-<p>Your one-stop shop for all your needs.</p>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title> Shoppeer - Home </title>
+        <link rel="stylesheet" href="css/pages/home.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <!--light-slider.css------------->
+        <link rel="stylesheet" type="text/css" href="css/components/lightslider.css">
+        <!--Jquery-------------------->
+        <script type="text/javascript" src="js/pages/home/Jquery.js"></script>
+        <!--lightslider.js--------------->
+        <script type="text/javascript" src="js/pages/home/lightslider.js"></script>
+    </head>
+    <body>
+        <!-- Header Section // THIS SHOULD BE ON EVERY SINGLE PAGE-->
+        <header id="header-nav" class="header js-header">
+            <div class="header_wrap gutter">
+                <div class="nav-container">
+                    <a class="header_home" th:href="@{/}"><img src="assets/images/shop_logo.png"></a>
+                    <nav class="nav_menu">
+                        <div tabindex="0" class="nav_lvl1">
+                            <div class="nav_titleCont">
+                                <p class="nav_title">
+                                    <a th:href="@{/}">Home</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div tabindex="0" class="nav_lvl1">
+                            <div class="nav_titleCont">
+                                <p class="nav_title">Shop by Department</p>
+                                <svg class="nav_carrot" xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </div>
+                            <div class="nav_dropdown">
+                                <!--EXAMPLE OF HOW TO CALL THE CATALOG, NEEDS STYLING-->
+                                <a href="javascript:navigate('all','all')">Clothing, Shoes, and Accesories</a>
+                                <a href="javascript:navigate('all','shirts')">Household Essentials</a>
+                                <a href="javascript:navigate('all','pants')">Books</a>
+                                <a href="javascript:navigate('all','shoes')">Electronics</a>
+                            </div>
+                        </div>
+                        <div tabindex="0" class="nav_lvl1">
+                            <div class="nav_titleCont">
+                                <p class="nav_title">Popular</p>
+                            </div>
+                        </div>
+                        <div tabindex="0" class="nav_lvl1">
+                            <div class="nav_titleCont">
+                                <p class="nav_title">New</p>
+                            </div>
+                        </div>
+
+                        <div tabindex="0" class="nav_lvl1">
+                            <div class="nav_titleCont">
+                                <p class="nav_title">Customer Service</p>
+                                <svg class="nav_carrot" xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </div>
+                            <div class="nav_dropdown">
+                                <a th:href="@{/faq}">FAQ</a>
+                                <a th:href="@{/contact}">Contact Us</a>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class-="header_right">
+                        <!-- Search Bar Container -->
+                        <div class="nav_searchCont nav_searchCont--close" onclick="toggleSearchBar()">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="search_bar" style="display: none;">
+                            <input type="text" id="searchInput" placeholder="Search..." />
+                            <button onclick="submitSearch()">Search</button>
+                        </div>            
+                        <!-- User Account Link -->
+                        <div class="nav_accountCont nav_accountCont">
+                            <a th:href="@{/login}"><i class="fas fa-user"></i></a>
+                        </div>
+                        <!-- Cart Link -->
+                        <div class="nav_cartCont nav_cartCont">
+                            <a th:href="@{/cart}"><i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+         <!-- Main Body Section-->
+        <main id="app" class="main js-main">
+            <br>
+            <br>
+            <div class="fullSlider">
+                <div class="qSlider_fullHeight">
+                    <div class="qSlider">
+                        <div class="qSlider_slides">
+                            <div class="gutter qSlider_wrap qSlider_wrap--center whiteText">
+                                <div class="container">
+                                    <div class="card">
+                                        <h1>Shopeer</h1>
+                                        <p>Discover a world of convenience and choice with Shopeer. Shop from a curated selection of products that cater to your lifestyle, all from the comfort of your home. With Shopeer, you’ll enjoy seamless browsing, secure transactions, and quick delivery options designed to make your shopping experience effortless.</p>
+                                        <div class="image-placeholder">
+                                            <img alt="1" src="assets/images/pexels-garrettmorrow-682933.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="image-placeholder">
+                                            <img alt="1" src="assets/images/pexels-sammsara-luxury-modern-home-372468-1099816.jpg">
+                                        </div>
+                                        <h1>Shopping Made Simple</h1>
+                                        <p>Transform the way you shop with ease and simplicity. Whether you're looking for essentials or treating yourself to something special, our intuitive platform is designed to save you time and effort. Shopping made simple means smarter choices, faster checkout, and satisfaction guaranteed.</p>
+                                    </div>
+                                </div>
+                                <section class="categories">
+                                    <h2>Home Decor <a href="#">Explore now</a></h2>
+                                    <div class="category-list">
+                                        <div class="category-item">
+                                            <img src="assets/images/chair.jpg" alt="Decorations">
+                                            <p>Chairs</p>
+                                        </div>
+                                        <div class="category-item">
+                                            <img src="assets/images/sofa.jpg" alt="Hosting">
+                                            <p>Sofas</p>
+                                        </div>
+                                        <div class="category-item">
+                                            <img src="assets/images/art.jpg" alt="The Holiday Shop">
+                                            <p>Art</p>
+                                        </div>
+                                        <div class="category-item">
+                                            <img src="assets/images/lamp.jpg" alt="Festive looks">
+                                            <p>Lamps</p>
+                                        </div>
+                                        <div class="category-item">
+                                            <img src="assets/images/desk.jpg" alt="Festive fun">
+                                            <p>Tables</p>
+                                        </div>
+                                        <div class="category-item">
+                                            <img src="assets/images/rug.jpg" alt="Gift wrapping">
+                                            <p>Rugs</p>
+                                        </div>
+                                        <div class="category-item">
+                                            <img src="assets/images/curtains.jpg" alt="Greeting & gift card">
+                                            <p>Curtains</p>
+                                        </div>
+                                    </div>
+                                </section>
+                        
+                                <!-- Items to Consider Section -->
+                                <section class="items-to-consider">
+                                    <h2>More items to consider <a href="#">See more</a></h2>
+                                    <div class="item-list">
+                                        <div class="item">
+                                            <img src="hat1.png" alt="Hat">
+                                            <p>UTSA Hat</p>
+                                        </div>
+                                        <div class="item">
+                                            <img src="hat2.png" alt="Hat">
+                                            <p>UTSA Gray Hat</p>
+                                        </div>
+                                        <div class="item">
+                                            <img src="hat3.png" alt="Hat">
+                                            <p>UTSA Blue Hat</p>
+                                        </div>
+                                        <div class="item">
+                                            <img src="shirt1.png" alt="Shirt">
+                                            <p>UTSA Black Shirt</p>
+                                        </div>
+                                        <div class="item">
+                                            <img src="shirt2.png" alt="Shirt">
+                                            <p>UTSA Orange Shirt</p>
+                                        </div>
+                                    </div>
+                                </section>
+                        
+                                <!-- Recommendations Section -->
+                                <section class="recommendations">
+                                    <div class="recommendation">
+                                        <h3>Based on your reading</h3>
+                                        <img src="assets/images/book.jpg" alt="Book">
+                                        <p>And Then There Were None</p>
+                                        <p>$24.99</p>
+                                    </div>
+                                    <div class="recommendation">
+                                        <h3>Gift ideas to keep essentials handy</h3>
+                                        <img src="assets/images/oliur-Z8I-BhVtzn0-unsplash.jpg" alt="Wallet">
+                                        <p>Minimalist Wallet</p>
+                                        <p>$9.95</p>
+                                    </div>
+                                    <div class="recommendation">
+                                        <h3>Selected for you</h3>
+                                        <img src="assets/images/jakub-zerdzicki-z_nks-MiWpM-unsplash.jpg" alt="Smart Light">
+                                        <p>Smart Light Bulbs</p>
+                                        <p>$12.99</p>
+                                    </div>
+                                    <div class="recommendation">
+                                        <h3>Gift ideas to protect your tech</h3>
+                                        <img src="assets/images/jewel-mitchell-4fZrjVO-FS8-unsplash.jpg" alt="Phone Case">
+                                        <p>iPhone SE Wallet Case</p>
+                                        <p>$19.99</p>
+                                    </div>
+                                </section>
+                                <!-- This is where the slider should go -->
+                                 <div class="slider-container">
+                                    <h1 class="slider-title">Popular</h1>
+                                    <section class="slider">
+                                        <ul id="autoWidth" class="cs-hidden">
+                                        <!--1------------------------------------>	
+                                            <li class="item-a">
+                                                <!--box-slider--------------->
+                                                <div class="box">
+                                                    <!--img-box---------->
+                                                    <div class="slide-img">
+                                                        <img alt="1" src="\shopImages\womens\Cardigan with Collar.png">
+                                                        <!--overlayer---------->
+                                                        <div class="overlay">
+                                                        <!--buy-btn------>	
+                                                        <a href="#" class="buy-btn">Buy Now</a>	
+                                                        </div>
+                                                    </div>
+                                                    <!--detail-box--------->
+                                                    <div class="detail-box">
+                                                        <!--type-------->
+                                                        <div class="type">
+                                                            <a href="#">Collared Cardigan</a>
+                                                                <span>New Arrival</span>
+                                                        </div>
+                                                        <!--price-------->
+                                                        <a href="#" class="price">$230</a>
+                                                    </div>
+                                                </div>		
+                                            </li>
+                                            <!--2------------------------------------>	
+                                            <li class="item-a">
+                                                <!--box-slider--------------->
+                                                <div class="box">
+                                                    <!--img-box---------->
+                                                    <div class="slide-img">
+                                                        <img alt="1" src="\shopImages\mens\Follow The Leader T-Shirt.png">
+                                                        <!--overlayer---------->
+                                                        <div class="overlay">
+                                                        <!--buy-btn------>	
+                                                        <a href="#" class="buy-btn">Buy Now</a>	
+                                                        </div>
+                                                    </div>
+                                                    <!--detail-box--------->
+                                                    <div class="detail-box">
+                                                        <!--type-------->
+                                                        <div class="type">
+                                                            <a href="#">Follow The Leader T-Shirt</a>
+                                                                <span>New Arrival</span>
+                                                        </div>
+                                                        <!--price-------->
+                                                        <a href="#" class="price">$40</a>
+                                                    </div>
+                                                </div>		
+                                            </li>
+                                            <!--3------------------------------------>	
+                                            <li class="item-a">
+                                                <!--box-slider--------------->
+                                                <div class="box">
+                                                    <!--img-box---------->
+                                                    <div class="slide-img">
+                                                        <img alt="1" src="\shopImages\mens\Slim Fit Cargo Joggers.png">
+                                                        <!--overlayer---------->
+                                                        <div class="overlay">
+                                                        <!--buy-btn------>	
+                                                        <a href="#" class="buy-btn">Buy Now</a>	
+                                                        </div>
+                                                    </div>
+                                                    <!--detail-box--------->
+                                                    <div class="detail-box">
+                                                        <!--type-------->
+                                                        <div class="type">
+                                                            <a href="#">Slim Fit Cargo Joggers</a>
+                                                                <span>New Arrival</span>
+                                                        </div>
+                                                        <!--price-------->
+                                                        <a href="#" class="price">$90</a>
+                                                    </div>
+                                                </div>		
+                                            </li>
+                                            <!--4------------------------------------>	
+                                            <li class="item-a">
+                                                <!--box-slider--------------->
+                                                <div class="box">
+                                                    <!--img-box---------->
+                                                    <div class="slide-img">
+                                                        <img alt="1" src="\shopImages\womens\Pleat-Front Twill Pants.png">
+                                                        <!--overlayer---------->
+                                                        <div class="overlay">
+                                                        <!--buy-btn------>	
+                                                        <a href="#" class="buy-btn">Buy Now</a>	
+                                                        </div>
+                                                    </div>
+                                                    <!--detail-box--------->
+                                                    <div class="detail-box">
+                                                        <!--type-------->
+                                                        <div class="type">
+                                                            <a href="#">Pleat-Front Twill Pants</a>
+                                                                <span>New Arrival</span>
+                                                        </div>
+                                                        <!--price-------->
+                                                        <a href="#" class="price">$180</a>
+                                                    </div>
+                                                </div>		
+                                            </li>
+                                            <!--5------------------------------------>	
+                                            <li class="item-a">
+                                                <!--box-slider--------------->
+                                                <div class="box">
+                                                    <!--img-box---------->
+                                                    <div class="slide-img">
+                                                        <img alt="1" src="\shopImages\unisex\Jarritos x Nike Dunk SB.png">
+                                                        <!--overlayer---------->
+                                                        <div class="overlay">
+                                                        <!--buy-btn------>	
+                                                        <a href="#" class="buy-btn">Buy Now</a>	
+                                                        </div>
+                                                    </div>
+                                                    <!--detail-box--------->
+                                                    <div class="detail-box">
+                                                        <!--type-------->
+                                                        <div class="type">
+                                                            <a href="#">Jarritos x Nike Dunk SB</a>
+                                                                <span>New Arrival</span>
+                                                        </div>
+                                                        <!--price-------->
+                                                        <a href="#" class="price">$130</a>
+                                                    </div>
+                                                </div>	
+                                            </li>
+                                            <!--6------------------------------------>	
+                                            <li class="item-a">
+                                                <!--box-slider--------------->
+                                                <div class="box">
+                                                    <!--img-box---------->
+                                                    <div class="slide-img">
+                                                        <img alt="1" src="\shopImages\womens\Satin Shirt.png">
+                                                        <!--overlayer---------->
+                                                        <div class="overlay">
+                                                        <!--buy-btn------>	
+                                                        <a href="#" class="buy-btn">Buy Now</a>	
+                                                        </div>
+                                                    </div>
+                                                    <!--detail-box--------->
+                                                    <div class="detail-box">
+                                                        <!--type-------->
+                                                        <div class="type">
+                                                            <a href="#">Rabbed Cardigan</a>
+                                                                <span>New Arrival</span>
+                                                        </div>
+                                                        <!--price-------->
+                                                        <a href="#" class="price">$23</a>
+                                                    </div>
+                                                </div>		
+                                            </li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Footer Section // THIS SHOULD BE ON EVERY SINGLE PAGE-->
+        <footer class="footer gutter">
+            <div class="footer-container container">
+                <div class="footer-address">
+                    <p class="footer__title">Softwear</p>
+                    <p>
+                        <a tabindex="0" target="_blank" href="https://maps.app.goo.gl/dDPmC2SnG4MTdF3u5" class="hidden-link"></a>
+                    </p>
+                    <p>
+                        <a tabindex="0" target="_blank" href="https://maps.app.goo.gl/dDPmC2SnG4MTdF3u5" class="hidden-link">1 UTSA Circle,</a>
+                    </p>
+                    <a tabindex="0" target="_blank" href="https://goo.gl/maps/4qhQPcgXy4b8oCdx6" class="hidden-link">
+                        <p>161 Essex Street,</p>
+                        <p>Salem, MA 01970</p>
+                    </a>
+                    <p>
+                        <a href="tel:+12104584011">210-458-4011</a><br>
+                    </p>
+                </div>
+                <div class="footer__threeCont">
+                    <div class="footer__hrsCont">
+                        <div class="footer__hours">
+                            <h2 class="footer__subtitle">Hours</h2>
+                                <div class="footer__hrsDiv">
+                                    <p class="footer__day">Monday</p>
+                                    <p>10 am–5 pm</p>
+                                </div>
+                                <div class="footer__hrsDiv">
+                                    <p class="footer__day">Tuesday</p>
+                                    <p>Closed</p>
+                                </div>
+                                <div class="footer__hrsDiv">
+                                    <p class="footer__day">Wednesday</p>
+                                    <p>Closed</p>
+                                </div>
+                                <div class="footer__hrsDiv">
+                                    <p class="footer__day">Thursday</p>
+                                    <p>10 am–5 pm</p>
+                                </div>
+                                <div class="footer__hrsDiv">
+                                    <p class="footer__day">Friday</p>
+                                    <p>10 am–5 pm</p>
+                                </div>
+                                <div class="footer__hrsDiv">
+                                    <p class="footer__day">Saturday</p>
+                                    <p>10 am–5 pm</p>
+                                </div>
+                                <div class="footer__hrsDiv">
+                                    <p class="footer__day">Sunday</p>
+                                    <p>10 am–5 pm</p>
+                                </div>
+                                <div class="footer__closed">Closed Thanksgiving, Christmas, and New Year's Day</div>
+                            </div>
+                        </div>
+                        <div class="footer__col footer__col1">
+                            <ul class="footer__nav">
+                                <li class="">
+                                    <a tabindex="0" href="https://www.pem.org/about-pem" class="">About PEM</a>
+                                </li>
+                                <li class="">
+                                    <a tabindex="0" href="https://www.pem.org/visit" class="">Directions</a>
+                                </li>
+                                <li class="">
+                                    <a tabindex="0" href="https://www.pem.org/about-pem/jobs-opportunities" class="">Jobs &amp; Opportunities</a>
+                                </li>
+                                <li class="">
+                                    <a tabindex="0" href="https://www.pem.org/membership" class="">Join &amp; Give</a>
+                                </li>
+                                <li class="">
+                                    <a tabindex="0" href="https://www.pem.org/blog-pemcast" class="">Blog &amp; PEMcast</a>
+                                </li>
+                                <li class="">
+                                    <a tabindex="0" href="https://www.pem.org/peabody-essex-museum-financials" class="">Financials</a>
+                                </li>
+                                <li class="footer__last">
+                                    <a tabindex="0" href="https://www.pem.org/privacy-policy" class="">Privacy Policy</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__col footer__col2">
+                            <ul class="footer__nav">
+                                <li class="">
+                                    <a tabindex="0" href="https://my.pem.org/events" class="">Buy Tickets</a>
+                                </li>
+                                <li class="">
+                                    <a tabindex="0" href="https://www.pem.org/about-pem/contact-us" class="">Contact Us</a>
+                                </li>
+                                <li class="">
+                                    <a tabindex="0" href="https://www.pem.org/press-news" class="">Press</a>
+                                </li>
+                                <li class="">
+                                    <a tabindex="0" href="https://www.pem.org/phillips-library" class="">Phillips Library</a>
+                                    <div class="footer__linkReddactor">
+                                        <p>306 Newburyport Turnpike,<br>Rowley, MA 01969</p>
+                                    </div>
+                                </li>
+                                <li class="footer__last">
+                                    <a tabindex="0" href="https://www.pem.org/terms-of-use" class="">Terms of Use</a>
+                                </li>
+                            </ul>
+                        </div>    
+                    </div>              
+                </div>
+            </div>
+        </footer>
+    </body>
+    <script src="js/pages/home/searchBar.js"></script>
+    <script type="text/javascript" src="js/pages/home/carousel.js"></script>
+</html>
