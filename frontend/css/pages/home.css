@@ -1,0 +1,517 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #ffffff;
+}
+
+/* General styling for the header */
+.header {
+    z-index: 3;
+}
+
+.header {
+    position: fixed;
+    background-color: #ffffff;
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+*, :after, :before {
+    box-sizing: inherit;
+}
+
+.gutter {
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.header_wrap {
+    width: 100%;
+    height: 70px;
+    background-color: #ffffff;
+}
+
+*, :after, :before {
+    box-sizing: border-box; 
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1370px;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+*, :after, :before {
+    box-sizing: inherit;
+}
+
+.header_home img{
+    height: 60px;
+    max-width: 100%;
+}
+
+/* Navigation Menu */
+.nav_menu {
+    display: flex;     
+    gap: 16px;
+}
+
+/* Level 1 Menu Items */
+.nav_lvl1 {
+    position: relative;
+    margin-right: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+.nav_lvl1:focus .nav_dropdown{
+    display: block;
+}
+
+.nav_titleCont {
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.nav_title {
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+.nav_title a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav_carrot {
+    fill:#333;
+}
+
+.nav_dropdown {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 50px;
+    border-radius: 5px;
+}
+
+.nav_dropdown a {
+    display: block;
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.nav_dropdown a:hover {
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+.nav_lvl1:hover .nav_dropdown{
+    display: block;
+}
+
+.header_right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 0;
+}
+
+.header_right {
+    position: relative;
+}
+
+.nav_searchCont, .nav_accountCont, .nav_cartCont {
+    display: inline-block;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.nav_cartCont a{
+    text-decoration: none;
+    color: inherit;
+}
+
+*, :after, :before {
+    box-sizing: inherit; 
+}
+
+
+
+/* This is for the search bar */
+.search_bar {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search_bar input {
+    border: none;
+    padding: 5px;
+    font-size: 16px;
+    width: 200px;
+}
+
+.search_bar button {
+    border: none;
+    background: #007BFF;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.search_bar button:hover {
+    background: #0056b3;
+}
+
+/* This is for the quad view images */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    width: 45%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.card h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.image-placeholder {
+    width: 100%; /* Matches the card's width */
+    height: auto; /* Allows height to adjust proportionally */
+    background: #d8d8d8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden; /* Ensures no overflow from the container */
+}
+
+.image-placeholder img {
+    max-width: 100%; /* Ensures the image fits the width of the container */
+    height: auto; /* Maintains the aspect ratio */
+    object-fit: contain; /* Ensures the entire image is visible without cropping */
+}
+
+/* This is for the key features */
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2 a {
+    font-size: 1rem;
+    color: #0073e6;
+    text-decoration: none;
+}
+
+.categories, .items-to-consider, .recommendations {
+    margin-bottom: 40px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category-list, .item-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+.category-item, .item {
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+.category-item img, .item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background: #eaeaea;
+}
+
+.category-item p, .item p {
+    font-size: 0.9rem;
+}
+
+/* Styling for the Recommendations Section */
+.recommendations {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 20px; /* space between the items */
+    margin: 20px auto;
+    max-width: 1200px; /* limit the width of the section */
+    padding: 20px;
+}
+
+.recommendation {
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.recommendation h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.recommendation p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+/* Image styling */
+.recommendation img {
+    width: 100%;
+    height: auto;
+    max-width: 200px; /* Limit the maximum size of the image */
+    margin-bottom: 15px;
+    object-fit: contain; /* Ensure the image fits well within its container */
+    border-radius: 5px;
+}
+
+/* Make the grid responsive on smaller screens */
+@media (max-width: 768px) {
+    .recommendations {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .recommendations {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
+    }
+}
+
+/* This is for the slider */
+
+.box{
+	width:300px;
+	box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+	border-radius: 10px;
+	overflow: hidden;
+	margin: 25px;
+}
+.slide-img{
+	height: 450px;
+	position:relative;
+}
+.slide-img img{
+	width:100%;
+	height: 100%;
+	object-fit: cover;
+	box-sizing: border-box;
+}
+.detail-box{
+	width: 100%;
+display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	font-family: calibri;
+}
+.type{
+	display: flex;
+	flex-direction: column;
+}
+.type a{
+	color:#222222;
+	margin: 5px 0px;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	padding-right: 8px;
+}
+.type span{
+	color:rgba(26,26,26,0.5);
+}
+.price{
+	color: #333333;
+	font-weight: 600;
+	font-size: 1.1rem;
+	font-family: poppins;
+	letter-spacing: 0.5px;
+}
+.overlay{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	width:100%;
+	height: 100%;
+	background-color: rgba(92,95,236,0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.buy-btn{
+	width:160px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #FFFFFF;
+	color:#252525;
+	font-weight: 700;
+	letter-spacing: 1px;
+	font-family: calibri;
+	border-radius: 20px;
+	box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+}
+.buy-btn:hover{
+	color:#FFFFFF;
+	background-color: #f15fa3;
+	transition: all ease 0.3s;
+}
+.overlay{
+	visibility: hidden;
+}
+.slide-img:hover .overlay{
+	visibility: visible;
+	animation:fade 0.5s;
+}
+ 
+@keyframes fade{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+.slider{
+    width:100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    margin-top: 0px;
+}
+
+.slider-title {
+    font-family: 'Arial', sans-serif; /* Customize font */
+    font-size: 1.5rem; /* Adjust size */
+    font-weight: bold;
+    color: #333; /* Text color */
+    margin-bottom: 0px; /* Space between title and slider */
+    margin-top: 2vw;
+    padding-left: 40px;
+    padding-bottom: 0px;
+}
+
+.slider-container{
+    width:100%;
+	height: auto;
+}
+
+ 
+
+/* Footer Styling */
+.footer {
+    background-color: #ffffff;
+    box-shadow: inset 0 30px 40px -30px #111;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.gutter {
+    padding-left: 130px;
+    padding-right: 130px;
+}
+
+@media only screen and (min-width: 80rem) {
+    .footer__container {
+        padding-bottom: 90px;
+        padding-top: 90px;
+    }
+}
+
+.footer__title {
+    font-size: 1.4rem;
+    font-size: 1.25em !important;
+    opacity: 1 !important;
+    line-height: 1.4285714286;
+}
+
+.footer__address p {
+    font-size: 1.125em;
+    color: #070707;
+    opacity: .8;
+}
+
+.footer__address {
+    width: 33%;
+}
+
+
+hr {
+    margin: 10px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+main {
+    padding: 20px;
+    background-color: #ffffff;
+    color: black;
+    text-align: left;
+}
+
+section {
+
+        padding: 20px;
+        background-color: #ffffff;
+        color: #333;
+        text-align: left;
+
+}
