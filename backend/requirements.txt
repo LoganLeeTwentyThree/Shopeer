@@ -1,0 +1,6 @@
+fastapi>=0.100.0         # FastAPI framework
+uvicorn==0.22.0         # ASGI server to run FastAPI
+sqlalchemy==1.4.44      # ORM for database interaction
+pydantic==2.9.2        # Data validation and serialization
+python-jose==3.3.0      # For JWT handling
+passlib[bcrypt]==1.7.4  # Password hashing library
