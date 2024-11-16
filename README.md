@@ -10,6 +10,9 @@ CS 4393 2024 Group Project
 - **Basic Backend**: A FastAPI backend to handle authentication and data endpoints.
 - **Frontend**: Simple HTML, CSS, and JavaScript for the interface.
 
+## Note
+- **As of now the setup is not 100% but it is there for use and future progress.
+
 ## Setup Instructions
 
 ### Steps to Run the Backend
