@@ -20,13 +20,20 @@ CS 4393 2024 Group Project
 2. Install dependencies:
     In the terminal use command:
    ```bash
-   pip install fastapi uvicorn
+   pip install requirements.txt
 
-3. Run the backend server:
+4. Initialize DB
+   In the terminal use command:
+   ```bash
+   python initialize_db.py
+
+5. Naviagete back to the root Shopeer
+   
+6. Run the backend server:
     ```bash
     uvicorn main:app --reload
 
-4. Verify the backend is running at:
+7. Verify the backend is running at:
     http://127.0.0.1:8000
 
 ### Steps to Run the Frontend
