@@ -1,46 +1,16 @@
-from fastapi import FastAPI, Depends, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
-from typing import Optional
+import os
+from backend.database import engine
+from fastapi import FastAPI
+from sqlalchemy import text
+from backend.routers import user
 
 app = FastAPI()
 
-# CORS setup for frontend requests
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# Automatically run `init.sql` at startup
+init_file_path = os.path.join(os.path.dirname(__file__), "..", "init.sql")
+with engine.connect() as connection:
+    with open(init_file_path) as f:
+        connection.execute(text(f.read()))
 
-# Simulated database
-users = {"user@example.com": {"password": "password123", "is_authenticated": False}}
-
-# Route to check authentication status
-@app.get("/auth/status")
-def auth_status():
-    # Example: Replace this logic with real session/token checks
-    for user in users.values():
-        if user["is_authenticated"]:
-            return {"authenticated": True, "username": "example_user"}
-    return {"authenticated": False}
-
-# Route to log in
-class LoginRequest(BaseModel):
-    email: str
-    password: str
-
-@app.post("/auth/login")
-def login(request: LoginRequest):
-    user = users.get(request.email)
-    if user and user["password"] == request.password:
-        user["is_authenticated"] = True
-        return {"authenticated": True, "message": "Login successful"}
-    raise HTTPException(status_code=401, detail="Invalid credentials")
-
-# Route to log out
-@app.post("/auth/logout")
-def logout():
-    for user in users.values():
-        user["is_authenticated"] = False
-    return {"authenticated": False, "message": "Logged out"}
+# Include routers
+app.include_router(user.router, prefix="/auth", tags=["Auth"])
