@@ -1,12 +1,106 @@
-<nav>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title> Shoppeer - Home </title>
+        <link rel="stylesheet" href="/css/pages/home.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <!--light-slider.css------------->
+        <link rel="stylesheet" type="text/css" href="../css/components/lightslider.css">
+        <!--Jquery-------------------->
+        <script type="text/javascript" src="../js/pages/home/Jquery.js"></script>
+        <!--lightslider.js--------------->
+        <script type="text/javascript" src="../js/pages/home/lightslider.js"></script>
+        <!-- Carousel -->
+        <script type="text/javascript" src="../js/pages/home/carousel.js"></script>
+    </head>
+<header id="header-nav" class="header js-header">
+  <div class="header_wrap gutter">
+      <div class="nav-container">
+          <a class="header_home" th:href="@{/}"><img src="assets\images\shop_logo.png"></a>
+          <nav class="nav_menu">
+              <div tabindex="0" class="nav_lvl1">
+                  <div class="nav_titleCont">
+                      <p class="nav_title">
+                          <a a href="#" data-page="home">Home</a>
+                      </p>
+                  </div>
+              </div>
+              <div tabindex="0" class="nav_lvl1">
+                  <div class="nav_titleCont">
+                      <p class="nav_title">Shop by Department</p>
+                      <svg class="nav_carrot" xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" viewBox="0 0 16 16">
+                          <path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                      </svg>
+                  </div>
+                  <div class="nav_dropdown">
+                      <!--EXAMPLE OF HOW TO CALL THE CATALOG, NEEDS STYLING-->
+                      <a href="#">Clothing, Shoes, and Accesories</a>
+                      <a href="#">Household Essentials</a>
+                      <a href="#">Books</a>
+                      <a href="#">Electronics</a>
+                  </div>
+              </div>
+              <div tabindex="0" class="nav_lvl1">
+                  <div class="nav_titleCont">
+                      <p href="#" data-page="popular" class="nav_title">Popular</p>
+                  </div>
+              </div>
+              <div tabindex="0" class="nav_lvl1">
+                  <div class="nav_titleCont">
+                      <p href="#" data-page="new" class="nav_title">New</p>
+                  </div>
+              </div>
+
+              <div tabindex="0" class="nav_lvl1">
+                  <div class="nav_titleCont">
+                      <p class="nav_title">Customer Service</p>
+                      <svg class="nav_carrot" xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" viewBox="0 0 16 16">
+                          <path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                      </svg>
+                  </div>
+                  <div class="nav_dropdown">
+                      <a href="#" data-page="faq">FAQ</a>
+                      <a th:href="@{/contact}">Contact Us</a>
+                      <a href="#" data-page="about">About Us</a>
+                  </div>
+              </div>
+          </nav>
+          <div class-="header_right">
+              <!-- Search Bar Container -->
+              <div class="nav_searchCont nav_searchCont--close" onclick="toggleSearchBar()">
+                  <i class="fas fa-search"></i>
+              </div>
+              <div class="search_bar" style="display: none;">
+                  <input type="text" id="searchInput" placeholder="Search..." />
+                  <button onclick="submitSearch()">Search</button>
+              </div>            
+              <!-- User Account Link -->
+              <div class="nav_accountCont nav_accountCont">
+                  <a ><i href="#" data-page="signin" class="fas fa-user"></i></a>
+              </div>
+              <!-- Cart Link -->
+              <div class="nav_cartCont nav_cartCont">
+                  <a th:href="@{/cart}"><i class="fas fa-shopping-cart"></i></a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="auth-links">
+    <!-- Links for authenticated/unauthenticated users will go here -->
+  </div>
+</header>
+
+<!-- <nav>
     <a href="#" data-page="home">Home</a>
     <a href="#" data-page="signin">Sign In</a>
     <a href="#" data-page="register">Register</a>
     <a href="#" data-page="popular">Popular</a>
     <a href="#" data-page="new">New</a>
     <a href="#" data-page="search">Search</a>
-    <div id="auth-links">
+    <div id="auth-links"> -->
       <!-- Links for authenticated/unauthenticated users will go here -->
-    </div>
+    <!-- </div>
   </nav>
-  
+   -->
