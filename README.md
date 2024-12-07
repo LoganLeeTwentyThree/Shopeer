@@ -28,7 +28,7 @@ CS 4393 2024 Group Project
 4. Initialize DB
    In the terminal use command:
    ```bash
-   python initialize_db.py
+   python init_db.py
 
 5. Naviagete back to the root Shopeer
    
