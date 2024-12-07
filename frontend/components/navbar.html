@@ -14,11 +14,12 @@
         <script type="text/javascript" src="../js/pages/home/lightslider.js"></script>
         <!-- Carousel -->
         <script type="text/javascript" src="../js/pages/home/carousel.js"></script>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     </head>
 <header id="header-nav" class="header js-header">
   <div class="header_wrap gutter">
       <div class="nav-container">
-          <a class="header_home" th:href="@{/}"><img src="assets\images\shop_logo.png"></a>
+          <a class="header_home" href="#" data-page="home"><img src="assets\images\shop_logo.png"></a>
           <nav class="nav_menu">
               <div tabindex="0" class="nav_lvl1">
                   <div class="nav_titleCont">
@@ -36,10 +37,10 @@
                   </div>
                   <div class="nav_dropdown">
                       <!--EXAMPLE OF HOW TO CALL THE CATALOG, NEEDS STYLING-->
-                      <a href="#">Clothing, Shoes, and Accesories</a>
-                      <a href="#">Household Essentials</a>
-                      <a href="#">Books</a>
-                      <a href="#">Electronics</a>
+                      <a href="#" data-page="popular">Clothing, Shoes, and Accesories</a>
+                      <a href="#" data-page="popular">Household Essentials</a>
+                      <a href="#" data-page="popular">Books</a>
+                      <a href="#" data-page="popular">Electronics</a>
                   </div>
               </div>
               <div tabindex="0" class="nav_lvl1">
@@ -62,7 +63,7 @@
                   </div>
                   <div class="nav_dropdown">
                       <a href="#" data-page="faq">FAQ</a>
-                      <a th:href="@{/contact}">Contact Us</a>
+                      <a href="#" data-page="contact">Contact Us</a>
                       <a href="#" data-page="about">About Us</a>
                   </div>
               </div>
